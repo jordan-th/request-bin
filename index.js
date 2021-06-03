@@ -7,7 +7,11 @@ app.get('/', (req, res) => {
 })
 
 app.all('/*', (req, res) => {
-  console.log(req);
-  res.send('add to bucket')
+  console.log(`Headers: ${req.headers}`);
+  //console.log(`Body: ${req.body}`);
+  res.send(`add to bucket`);
 })
 
+app.listen(PORT, () => {
+  console.log(`listening on port ${PORT}`);
+})
